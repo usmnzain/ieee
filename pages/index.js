@@ -5,6 +5,8 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { Carousel } from "react-responsive-carousel";
 import Card from "../components/Card/Card";
 import HelpCard from "../components/HelpCard/HelpCard";
+import Header from "../components/Header/Header";
+import Footer from "../components/Footer/Footer";
 
 export default function Home() {
   return (
@@ -14,35 +16,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className={styles.header}>
-        <div className={styles.logoContainer}>
-          <img src="/ieee.png" />
-          <h1 style={{ marginLeft: "10px" }}>IEEEP Karachi</h1>
-        </div>
-        <div className={styles.links}>
-          <Link href="/">
-            <a className={styles.link}>Home</a>
-          </Link>
-          <Link href="/about">
-            <a className={styles.link}>About</a>
-          </Link>
-          <Link href="/">
-            <a className={styles.link}>Local Council</a>
-          </Link>
-          <Link href="/">
-            <a className={styles.link}>Newsletter</a>
-          </Link>
-          <Link href="/">
-            <a className={styles.link}>Events</a>
-          </Link>
-          <Link href="/">
-            <a className={styles.link}>Membership</a>
-          </Link>
-          <Link href="/">
-            <a className={styles.link}>Contact</a>
-          </Link>
-        </div>
-      </div>
+      <Header />
 
       <div className={styles.carousel}>
         <Carousel showThumbs={false}>
@@ -109,7 +83,9 @@ export default function Home() {
           }}
         >
           <p className={styles.title}>Upcomming Events</p>
-          <a>Read More &#8594;</a>
+          <Link href="/events">
+            <a>Read More &#8594;</a>
+          </Link>
         </div>
         <div className={styles.eventCards}>
           <Card
@@ -170,13 +146,12 @@ export default function Home() {
           style={{
             display: "flex",
             flexDirection: "row",
-            justifyContent: "space-between",
+            justifyContent: "center",
             alignItems: "baseline",
             color: "#fafafa",
           }}
         >
           <p className={styles.title}>Latest News</p>
-          <a>Read More &#8594;</a>
         </div>
         <div className={styles.eventCards}>
           <Card
@@ -197,9 +172,7 @@ export default function Home() {
         </div>
       </div>
 
-      <footer className={styles.footer}>
-        2021 IEEEP KHI. All Rights Reserved
-      </footer>
+      <Footer />
     </div>
   );
 }
